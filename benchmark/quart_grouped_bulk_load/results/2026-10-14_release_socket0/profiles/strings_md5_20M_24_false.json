@@ -1,0 +1,157 @@
+{
+    "io": {
+        "total_bytes_read": 0,
+        "total_bytes_written": 0
+    },
+    "operator": [
+        {
+            "extra_info": {},
+            "intermediate_rows": 0,
+            "intermediate_size_bytes": 0,
+            "timing": 0.0,
+            "type": "RESULT_COLLECTOR",
+            "children": [
+                {
+                    "extra_info": {},
+                    "intermediate_rows": 0,
+                    "intermediate_size_bytes": 0,
+                    "timing": 9.478916403000001,
+                    "type": "CREATE_INDEX",
+                    "children": [
+                        {
+                            "extra_info": {
+                                "Order By": "#0 ASC",
+                                "Estimated Cardinality": "20000000"
+                            },
+                            "intermediate_rows": 20000000,
+                            "intermediate_size_bytes": 1719982080,
+                            "timing": 3.772291932,
+                            "type": "ORDER_BY",
+                            "children": [
+                                {
+                                    "extra_info": {
+                                        "Expression": "(#0 IS NOT NULL)",
+                                        "Estimated Cardinality": "20000000"
+                                    },
+                                    "intermediate_rows": 20000000,
+                                    "intermediate_size_bytes": 480000000,
+                                    "timing": 0.003533277999999999,
+                                    "type": "FILTER",
+                                    "children": [
+                                        {
+                                            "extra_info": {
+                                                "Projections": [
+                                                    "k",
+                                                    "#1"
+                                                ],
+                                                "Estimated Cardinality": "20000000"
+                                            },
+                                            "intermediate_rows": 20000000,
+                                            "intermediate_size_bytes": 480000000,
+                                            "timing": 0.0011418860000000017,
+                                            "type": "PROJECTION",
+                                            "children": [
+                                                {
+                                                    "extra_info": {
+                                                        "Table": "memory.main.t",
+                                                        "Type": "Sequential Scan",
+                                                        "Projections": "",
+                                                        "Estimated Cardinality": "20000000"
+                                                    },
+                                                    "intermediate_rows": 20000000,
+                                                    "intermediate_size_bytes": 480000000,
+                                                    "row_groups_scanned": 163,
+                                                    "rows_scanned": 20000000,
+                                                    "timing": 0.240557478,
+                                                    "total_row_groups_to_scan": 163,
+                                                    "type": "TABLE_SCAN"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "optimizer": {
+        "aggregate_function_rewriter": 0.000004398,
+        "aggregate_reuse": 0.000001641,
+        "build_side_probe_side": 0.000001279,
+        "column_lifetime": 0.000001127,
+        "common_aggregate": 2.97e-7,
+        "common_subexpressions": 2.83e-7,
+        "common_subplan": 0.000008165,
+        "cte_filter_pusher": 3.43e-7,
+        "cte_inlining": 3.08e-7,
+        "deliminator": 3.7e-7,
+        "duplicate_groups": 6.44e-7,
+        "empty_result_pullup": 2.12e-7,
+        "expression_rewriter": 0.000004737,
+        "filter_pullup": 4.81e-7,
+        "filter_pushdown": 0.000006818,
+        "grouping_sets": 2.36e-7,
+        "in_clause": 1.82e-7,
+        "join_elimination": 7.81e-7,
+        "join_filter_pushdown": 3.08e-7,
+        "join_order": 0.000014523,
+        "late_materialization": 3.86e-7,
+        "limit_pushdown": 2.13e-7,
+        "outer_join_simplification": 0.000001387,
+        "partial_aggregate_pushdown": 5.06e-7,
+        "partitioned_execution": 4.49e-7,
+        "projection_placement": 4.98e-7,
+        "projection_pullup": 4.12e-7,
+        "redundant_order_keys": 0.000001625,
+        "regex_range": 2e-7,
+        "reorder_filter": 4.57e-7,
+        "row_group_pruner": 2.03e-7,
+        "row_number_rewriter": 2.97e-7,
+        "sampling_pushdown": 1.69e-7,
+        "scalar_fn_pushdown": 1.97e-7,
+        "statistics_propagation": 0.000003712,
+        "top_n": 2.48e-7,
+        "top_n_window_elimination": 0.000001407,
+        "total_time": 0.000104421,
+        "type_pushdown": 3.57e-7,
+        "unnest_rewriter": 5.07e-7,
+        "unused_columns": 0.000004267,
+        "window_self_join": 3.01e-7
+    },
+    "parser": {
+        "total_time": 0.000069066
+    },
+    "physical_planner": {
+        "column_binding": 0.000001837,
+        "create_plan": 0.000017188,
+        "resolve_types": 1.49e-7,
+        "total_time": 0.000022351
+    },
+    "planner": {
+        "binding_time": 0.00005094,
+        "total_time": 0.000094136
+    },
+    "query": {
+        "cpu_time": 13.496440977,
+        "sql": "CREATE INDEX idx ON t(k);",
+        "total_intermediate_rows": 80000000,
+        "total_intermediate_size_bytes": 3159982080,
+        "total_row_groups_scanned": 163,
+        "total_row_groups_to_scan": 163,
+        "total_rows_scanned": 20000000,
+        "total_time": 4.381171228
+    },
+    "storage": {
+        "checkpoint_latency": 0.000257059
+    },
+    "system": {
+        "blocked_thread_time": 0.0,
+        "peak_buffer_memory": 3708978832,
+        "peak_streaming_buffer_size": 0,
+        "peak_temp_dir_size": 0,
+        "total_memory_allocated": 1512046592
+    }
+}

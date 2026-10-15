@@ -1,0 +1,6 @@
+"('KEYS=' || count_star())"
+KEYS=100000000
+Run Time (s): real 2.315 user 4.907091 sys 0.394821
+Run Time (s): real 2.303 user 5.010269 sys 0.245409
+Run Time (s): real 2.286 user 5.126804 sys 0.122402
+Success

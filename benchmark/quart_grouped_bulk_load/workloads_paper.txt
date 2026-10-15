@@ -1,0 +1,5 @@
+dense_int32_100M|CREATE TABLE t AS SELECT range::INTEGER AS k FROM range(100000000);
+gapped_int32_100M|CREATE TABLE t AS SELECT range::INTEGER AS k FROM range(200000000) WHERE (hash(range) & 1) = 0;
+random_int64_100M|CREATE TABLE t AS SELECT hash(range) AS k FROM range(100000000);
+strings_seq_20M|CREATE TABLE t AS SELECT 'key_' || lpad(range::VARCHAR, 10, '0') AS k FROM range(20000000);
+strings_md5_20M|CREATE TABLE t AS SELECT md5(range::VARCHAR) AS k FROM range(20000000);
